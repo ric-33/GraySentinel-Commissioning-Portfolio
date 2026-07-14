@@ -244,4 +244,4 @@ Set-ExecutionPolicy -Scope Process Bypass
 - Confirm the HTTP directory brute-force custom rule fires specifically (not just relying on server-side logs) by re-running with `sudo tail -f /var/log/suricata/fast.log | grep -i "directory"` during the test
 - Tune SMB rule thresholds to reduce alert volume during legitimate admin activity while still catching rapid connection attempts
 - Extend Sysmon collector to also flag `__PSScriptPolicyTest` temp file patterns specifically, given their association with script execution policy probing
--
+
