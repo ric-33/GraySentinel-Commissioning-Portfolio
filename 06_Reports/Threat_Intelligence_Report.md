@@ -167,4 +167,4 @@ When conducting real assessments, IoCs should be:
 2. Submitted to threat sharing communities (MISP, ISACs)
 3. Enriched with context (timing, target, impact)
 4. Monitored for reuse across other incidents
-5.
+
