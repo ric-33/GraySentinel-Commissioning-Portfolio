@@ -1,6 +1,6 @@
 # Reconnaissance Report
 
-**Target:** 192.168.19.129 (Win-Client, lab VM)
+**Target:** 192.168.60.128 (Win-Client, lab VM)
 
 **Secondary Domain Recon:** example.com (passive), tesla.com (OSINT)
 
