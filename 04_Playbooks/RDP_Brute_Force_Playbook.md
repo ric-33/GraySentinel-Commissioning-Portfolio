@@ -1,8 +1,11 @@
 # Playbook: RDP Brute Force Detection and Response
 
 **ID:** PB-RDP-001
+
 **Version:** 1.0
+
 **Author:** Ritesh Gupta
+
 **Created:** 8-06-2026
 
 ---
