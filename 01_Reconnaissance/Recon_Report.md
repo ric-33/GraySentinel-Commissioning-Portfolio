@@ -22,7 +22,9 @@ Ran `dig example.com ANY` against example.com to gather public DNS footprint wit
 - DNSKEY records present → domain uses **DNSSEC**
 - No MX/TXT (SPF/DKIM) records returned in this query — would need targeted `MX`/`TXT` lookups to confirm mail posture
 
-**Screenshot:** `screenshots/dig_example.com.png`
+**Screenshot:**
+
+![DNS recon](dig_example.com.png.jpeg)
 
 ---
 
@@ -40,7 +42,9 @@ nmap -p- -T4 192.168.60.128           → all 65535 ports filtered (no response)
 - Full port scan (all 65535 ports) took ~135 seconds and returned all ports as `filtered`, confirming a host-based firewall is actively blocking probes rather than the host being offline
 - **Takeaway:** default scans without `-Pn` or without touching known-open ports directly (445, 3389) give a false "down" reading — this matters for realistic attack-surface assessment
 
-**Screenshot:** `screenshots/nmap_full_portscan.png`
+**Screenshot:**
+
+![Full port scan](nmap_full_port_scan.png.jpeg)
 
 ---
 
@@ -60,7 +64,9 @@ nmap -p 445 --script smb-os-discovery,smb-enum-shares 192.168.60.128
 
 **Risk:** Anonymous READ on IPC$ confirms null-session enumeration is possible, a classic recon foothold even though ADMIN$/C$ are locked down.
 
-**Screenshot:** `screenshots/smb_enum.png`
+**Screenshot:**
+
+![SMB enumeration](smb_enum.png.jpeg)
 
 ### RDP (port 3389)
 ```
@@ -74,7 +80,9 @@ nmap -p 3389 --script rdp-enum-encryption 192.168.60.128
 
 **Risk:** NLA is enforced (good practice), but RDP is exposed and reachable — a legitimate target for brute-force/credential attacks if not paired with account lockout policies.
 
-**Screenshot:** `screenshots/rdp_enum.png`
+**Screenshot:**
+
+![RDP enumeration](rdp_enum.png.jpeg)
 
 ---
 
@@ -92,7 +100,9 @@ theHarvester -d tesla.com -b crtsh
 
 **Attacker value:** 326 subdomains is a large attack surface map — an attacker would triage these for forgotten/staging assets (e.g. internal tooling subdomains like `*.paloalto.tesla.com`) that may be less hardened than the main site.
 
-**Screenshot:** `screenshots/theharvester.png`
+**Screenshot:**
+
+![theHarvester OSINT](theharvester.png.jpeg)
 
 ---
 
@@ -111,7 +121,9 @@ sudo nmap -sU -p 53,123,161,137,138 192.168.60.128
 
 **Why UDP is slower:** no handshake — closed ports only respond with an ICMP port-unreachable, and no response is ambiguous (open vs. filtered), forcing retransmissions/timeouts.
 
-**Screenshot:** `screenshots/udp_scan.png`
+**Screenshot:**
+
+![UDP scan](udp_scan.png.jpeg)
 
 ---
 
@@ -125,7 +137,9 @@ Reviewed the Windows Firewall log (`pfirewall.log`) after running a decoy scan.
 
 **Defender takeaway:** correlating multiple source IPs hitting identical ports/timestamps is how a decoy scan gets unmasked — a real attacker relying on decoys alone would still leave this pattern behind.
 
-**Screenshot:** `screenshots/firewall_log_decoy.png`
+**Screenshot:**
+
+![Firewall log decoy scan](firewall_log_decoy.png.jpeg)
 
 ---
 
@@ -140,7 +154,11 @@ Built and ran `nmap_automator.sh` against 192.168.60.128.
 - Clock skew detected: ~1h45m mean deviation — worth noting for log correlation during an engagement
 - Reports auto-saved in `.nmap`, `.xml`, and `.gnmap` formats to the portfolio Reports directory
 
-**Screenshots:** `screenshots/automator_execution.png`, `screenshots/automator_output.png`
+**Screenshots:**
+
+![Automator script execution](automater_execution.png.jpeg)
+
+![Automator scan output](automater_output.png.jpeg)
 
 ---
 
