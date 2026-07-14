@@ -1,7 +1,9 @@
 # Threat Intelligence Report
 
 **Reporting Period:** June 2026
+
 **Threat Level:** HIGH
+
 **Analyst:** Ritesh Gupta
 
 ---
