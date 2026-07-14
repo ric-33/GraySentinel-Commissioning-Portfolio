@@ -24,7 +24,7 @@ Ran `dig example.com ANY` against example.com to gather public DNS footprint wit
 
 **Screenshot:**
 
-![DNS recon](dig_example.com.png.jpeg)
+![DNS recon](dig_example.com.png)
 
 ---
 
@@ -44,7 +44,7 @@ nmap -p- -T4 192.168.60.128           → all 65535 ports filtered (no response)
 
 **Screenshot:**
 
-![Full port scan](nmap_full_port_scan.png.jpeg)
+![Full port scan](nmap_full_port_scan.png)
 
 ---
 
@@ -66,7 +66,7 @@ nmap -p 445 --script smb-os-discovery,smb-enum-shares 192.168.60.128
 
 **Screenshot:**
 
-![SMB enumeration](smb_enum.png.jpeg)
+![SMB enumeration](smb_enum.png)
 
 ### RDP (port 3389)
 ```
@@ -82,7 +82,7 @@ nmap -p 3389 --script rdp-enum-encryption 192.168.60.128
 
 **Screenshot:**
 
-![RDP enumeration](rdp_enum.png.jpeg)
+![RDP enumeration](rdp_enum.png)
 
 ---
 
@@ -102,7 +102,7 @@ theHarvester -d tesla.com -b crtsh
 
 **Screenshot:**
 
-![theHarvester OSINT](theharvester.png.jpeg)
+![theHarvester OSINT](theharvester.png)
 
 ---
 
@@ -123,7 +123,7 @@ sudo nmap -sU -p 53,123,161,137,138 192.168.60.128
 
 **Screenshot:**
 
-![UDP scan](udp_scan.png.jpeg)
+![UDP scan](udp_scan.png)
 
 ---
 
@@ -139,7 +139,7 @@ Reviewed the Windows Firewall log (`pfirewall.log`) after running a decoy scan.
 
 **Screenshot:**
 
-![Firewall log decoy scan](firewall_log_decoy.png.jpeg)
+![Firewall log decoy scan](firewall_log_decoy.png)
 
 ---
 
@@ -156,9 +156,9 @@ Built and ran `nmap_automator.sh` against 192.168.60.128.
 
 **Screenshots:**
 
-![Automator script execution](automater_execution.png.jpeg)
+![Automator script execution](automater_execution.png)
 
-![Automator scan output](automater_output.png.jpeg)
+![Automator scan output](automater_output.png)
 
 ---
 
